@@ -1,0 +1,1027 @@
+<title>Nairobi Flood Susceptibility Index 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Leaflet 1.9.4 CSS — inlined */
+.leaflet-pane,.leaflet-tile,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile-container,.leaflet-pane>svg,.leaflet-pane>canvas,.leaflet-zoom-box,.leaflet-image-layer,.leaflet-layer{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-tile,.leaflet-marker-icon,.leaflet-marker-shadow{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer,.leaflet-container .leaflet-tile{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-top,.leaflet-bottom{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}.leaflet-zoom-anim .leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-zoom-anim .leaflet-tile,.leaflet-pan-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-animated.leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-popup-pane,.leaflet-control{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-image-layer,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-marker-icon.leaflet-interactive,.leaflet-image-layer.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:Helvetica Neue,Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:black}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:hover,.leaflet-bar a:focus{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-attribution{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:hover,.leaflet-control-attribution a:focus{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;font-size:11px;white-space:nowrap;overflow:hidden;-moz-box-sizing:border-box;box-sizing:border-box;background:#fff;background:rgba(255,255,255,.5)}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers,.leaflet-touch .leaflet-bar{box-shadow:none}.leaflet-touch .leaflet-control-layers,.leaflet-touch .leaflet-bar{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:white;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:transparent}.leaflet-container a.leaflet-popup-close-button:hover,.leaflet-container a.leaflet-popup-close-button:focus{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;-ms-filter:"progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)";filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)}.leaflet-oldie .leaflet-popup-tip-container{margin-top:-1px}.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;min-height:1px}.leaflet-popup-content p{margin:17px 0}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-top:before,.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{position:absolute;pointer-events:none;border:6px solid transparent;background:transparent;content:""}.leaflet-tooltip-bottom:before{top:0;left:50%;margin-left:-6px;margin-top:-12px;border-bottom-color:#fff}.leaflet-tooltip-top:before{bottom:0;left:50%;margin-left:-6px;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-left:before{top:50%;right:0;margin-top:-6px;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{top:50%;left:0;margin-top:-6px;margin-left:-12px;border-right-color:#fff}.leaflet-disabled{cursor:default}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<style>
+/* ============ TOKENS ============ */
+:root {
+  --bg: #0f1117;
+  --bg2: #1a1d2e;
+  --bg3: #242740;
+  --border: #2d3154;
+  --text: #e8eaf0;
+  --text2: #9aa0b4;
+  --accent: #4d9de0;
+  --accent2: #2563eb;
+  --red: #e05555;
+  --orange: #e09555;
+  --green: #55b08e;
+  --panel: #161926;
+  --panel-border: #252a40;
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { height: 100%; }
+body {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ============ TOP NAV ============ */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 20px;
+  height: 52px;
+  gap: 16px;
+}
+
+.nav-brand { font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; margin-right: auto; }
+.nav-sub { font-size: 12px; color: var(--text2); display: none; }
+
+.tab-group { display: flex; gap: 4px; }
+
+.tab-btn {
+  padding: 6px 16px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: none;
+  color: var(--text2);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.15s;
+  white-space: nowrap;
+}
+.tab-btn.active { background: var(--accent2); color: #fff; border-color: var(--accent2); }
+.tab-btn:hover:not(.active) { color: var(--text); background: var(--bg2); }
+
+/* ============ PART A ============ */
+#part-a { padding-top: 52px; display: block; }
+#part-b { padding-top: 52px; display: none; height: calc(100vh - 52px); }
+
+/* Hero */
+.hero {
+  padding: 72px 40px 56px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+  color: var(--accent); margin-bottom: 14px;
+}
+.hero h1 {
+  font-size: 40px; font-weight: 700; line-height: 1.15;
+  margin-bottom: 18px; text-wrap: balance;
+}
+.hero-lead { font-size: 17px; color: var(--text2); max-width: 620px; margin-bottom: 36px; }
+
+.hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+.hero-stat-num { font-size: 36px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.hero-stat-label { font-size: 12px; color: var(--text2); margin-top: 2px; }
+
+/* Chapter nav */
+.chapter-nav {
+  position: sticky; top: 52px; z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto; scrollbar-width: none;
+}
+.chapter-nav::-webkit-scrollbar { display: none; }
+.chapter-nav-inner { display: flex; padding: 0 40px; white-space: nowrap; }
+
+.chapter-link {
+  padding: 12px 14px;
+  font-size: 12px; font-weight: 500;
+  color: var(--text2);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s; white-space: nowrap;
+}
+.chapter-link:hover { color: var(--text); }
+.chapter-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Story section */
+.story-section {
+  max-width: 780px; margin: 0 auto;
+  padding: 64px 40px;
+  border-top: 1px solid var(--border);
+}
+.section-label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 2px;
+  color: var(--text2); margin-bottom: 8px;
+}
+.story-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 18px; line-height: 1.25; text-wrap: balance; }
+.story-section p { color: var(--text2); margin-bottom: 14px; max-width: 660px; }
+
+/* Area cards */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px; margin-top: 28px;
+}
+.area-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 16px;
+}
+.area-card-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.area-card-rivers { font-size: 11px; color: var(--text2); margin-bottom: 10px; }
+.area-card-stat { font-size: 26px; font-weight: 700; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
+.area-card-meta { font-size: 11px; color: var(--text2); }
+.concern-bar { height: 4px; border-radius: 2px; background: var(--border); margin-top: 12px; overflow: hidden; }
+.concern-bar-fill { height: 100%; border-radius: 2px; }
+
+/* Data table */
+.data-table { width: 100%; border-collapse: collapse; margin-top: 24px; font-size: 13px; }
+.data-table th {
+  text-align: left; padding: 8px 12px;
+  color: var(--text2); font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.data-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.data-table tr:last-child td { border-bottom: none; }
+
+.badge {
+  display: inline-block; padding: 2px 8px;
+  border-radius: 4px; font-size: 11px; font-weight: 500;
+}
+
+/* Callout */
+.callout {
+  background: var(--bg2); border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0;
+}
+.callout p { margin: 0; color: var(--text2); }
+.callout strong { color: var(--text); }
+
+/* Step list */
+.step-list { list-style: none; margin-top: 20px; }
+.step-list li { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.step-list li:last-child { border-bottom: none; }
+.step-num {
+  width: 24px; height: 24px; background: var(--accent2);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+}
+
+/* Horizontal bar rows (Part A compare) */
+.compare-bar-row {
+  display: grid; grid-template-columns: 110px 1fr 44px;
+  align-items: center; gap: 10px; padding: 6px 0;
+  font-size: 13px;
+}
+.compare-bar-name { color: var(--text2); }
+.compare-bar-track { height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+.compare-bar-fill { height: 100%; border-radius: 4px; background: var(--accent); }
+.compare-bar-val { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+
+/* Source chips */
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.source-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 12px; color: var(--text2);
+}
+
+/* ============ PART B: DASHBOARD ============ */
+#part-b {
+  display: none;
+  grid-template-columns: 220px 1fr 296px;
+  overflow: hidden;
+}
+#part-b.visible {
+  display: grid;
+}
+
+/* Left panel */
+.filter-panel {
+  background: var(--panel); border-right: 1px solid var(--panel-border);
+  overflow-y: auto; padding: 14px;
+}
+.filter-panel-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.filter-panel-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text2); }
+.reset-btn { font-size: 11px; color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; }
+.reset-btn:hover { text-decoration: underline; }
+
+.filter-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text2); margin-bottom: 6px; margin-top: 14px; }
+.filter-select {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--text); padding: 8px 10px;
+  font-size: 13px; font-family: inherit; cursor: pointer;
+}
+
+.panel-divider { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text2); font-weight: 600; margin-top: 18px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+
+.layer-list { list-style: none; }
+.layer-item { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 12px; color: var(--text2); cursor: pointer; }
+.layer-item input[type="checkbox"] { accent-color: var(--accent2); width: 14px; height: 14px; cursor: pointer; flex-shrink: 0; }
+.layer-item label { cursor: pointer; }
+
+.panel-note { font-size: 11px; color: var(--text2); margin-top: 10px; line-height: 1.6; }
+
+/* Map */
+#map { flex: 1; z-index: 0; }
+.leaflet-container { background: #1a1d2e !important; }
+
+/* Stats panel */
+.stats-panel {
+  background: var(--panel); border-left: 1px solid var(--panel-border);
+  overflow-y: auto; padding: 14px;
+}
+.stats-section { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--panel-border); }
+.stats-section:last-child { border-bottom: none; }
+
+.stats-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.stats-section-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text); }
+.stats-badge { font-size: 9px; padding: 2px 6px; border-radius: 3px; background: var(--bg3); color: var(--text2); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Donut */
+.donut-wrapper { display: flex; align-items: center; gap: 16px; }
+.donut-canvas { flex-shrink: 0; }
+.legend-row { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; font-size: 12px; }
+.legend-label { color: var(--text2); display: flex; align-items: center; gap: 6px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-val { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* Area bars (Part B) */
+.area-bar-row { display: grid; grid-template-columns: 92px 1fr 34px; align-items: center; gap: 8px; padding: 4px 0; font-size: 12px; }
+.area-bar-name { color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.area-bar-track { height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+.area-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+.area-bar-val { text-align: right; font-variant-numeric: tabular-nums; font-size: 11px; color: var(--text); }
+
+/* Big number */
+.big-number { font-size: 34px; font-weight: 700; line-height: 1; margin: 6px 0 3px; font-variant-numeric: tabular-nums; }
+.big-number-unit { font-size: 13px; color: var(--text2); font-weight: 400; }
+
+/* Breakdown rows */
+.breakdown-row { display: flex; justify-content: space-between; font-size: 12px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.breakdown-row:last-child { border-bottom: none; }
+.breakdown-name { color: var(--text2); }
+.breakdown-val { font-variant-numeric: tabular-nums; font-weight: 500; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 700px) {
+  .hero { padding: 40px 16px 36px; }
+  .hero h1 { font-size: 26px; }
+  .hero-stats { gap: 20px; }
+  .story-section { padding: 40px 16px; }
+  .chapter-nav-inner { padding: 0 16px; }
+  #part-b { grid-template-columns: 1fr; grid-template-rows: auto 300px auto; }
+  .filter-panel, .stats-panel { max-height: 260px; }
+  .area-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <span class="nav-brand">Nairobi Flood Susceptibility Index 2026</span>
+  <div class="tab-group">
+    <button class="tab-btn active" onclick="showTab('a')" id="tab-a">Part A · The Analysis</button>
+    <button class="tab-btn" onclick="showTab('b')" id="tab-b">Part B · Dashboard</button>
+  </div>
+</nav>
+
+<!-- ====================================================== -->
+<!-- PART A: THE STORY                                       -->
+<!-- ====================================================== -->
+<div id="part-a">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-eyebrow">Nairobi · Flood Susceptibility Index · FR Model + AHP Weighting</div>
+    <h1>Which sub-counties face the highest flood susceptibility in Nairobi?</h1>
+    <p class="hero-lead">A Frequency Ratio and Analytical Hierarchy Process (AHP) multi-criteria analysis of flood susceptibility across all 17 Nairobi sub-counties, using 10 geo-spatial conditioning factors.</p>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num" id="h-total">17</div><div class="hero-stat-label">Sub-counties analysed</div></div>
+      <div><div class="hero-stat-num" id="h-flagged">12</div><div class="hero-stat-label">Rated High or above</div></div>
+      <div><div class="hero-stat-num">10</div><div class="hero-stat-label">Conditioning factors</div></div>
+      <div><div class="hero-stat-num" id="h-pct">3.71</div><div class="hero-stat-label">Mean FSI (1–5 scale)</div></div>
+    </div>
+  </div>
+
+  <!-- Chapter nav -->
+  <nav class="chapter-nav" id="chapter-nav">
+    <div class="chapter-nav-inner">
+      <span class="chapter-link active" data-target="s-places">The study</span>
+      <span class="chapter-link" data-target="s-findings">Key findings</span>
+      <span class="chapter-link" data-target="s-compare">Sub-county FSI</span>
+      <span class="chapter-link" data-target="s-map">Read the map</span>
+      <span class="chapter-link" data-target="s-factors">10 factors</span>
+      <span class="chapter-link" data-target="s-fr">FR model</span>
+      <span class="chapter-link" data-target="s-ahp">AHP weights</span>
+      <span class="chapter-link" data-target="s-rains">Rainfall outlook</span>
+      <span class="chapter-link" data-target="s-method">Methodology</span>
+      <span class="chapter-link" data-target="s-evidence">Data sources</span>
+    </div>
+  </nav>
+
+  <!-- Section 01: The study -->
+  <section class="story-section" id="s-places">
+    <div class="section-label">Section 01</div>
+    <h2>Mapping flood susceptibility across all of Nairobi</h2>
+    <p>Nairobi's topographic diversity — from the Ngong Hills escarpment in the west to the flat Athi plains in the east — means different sub-counties face fundamentally different flood conditions. This analysis produces a Flood Susceptibility Index (FSI) for every sub-county using a combination of physical terrain factors and rainfall-based evidence.</p>
+    <p>Ten conditioning factors were processed in QGIS: slope, elevation, topographic wetness index (TWI), drainage density, distance to rivers, distance to roads, surface curvature, NDVI, soil type, and mean annual rainfall. Each factor was classified and given a Frequency Ratio weight based on historical flood occurrence, then combined using AHP-derived factor weights.</p>
+    <div class="area-grid" id="area-cards"></div>
+  </section>
+
+  <!-- Section 02: Key findings -->
+  <section class="story-section" id="s-findings">
+    <div class="section-label">Section 02</div>
+    <h2>Key findings: the Embakasi cluster dominates high susceptibility</h2>
+    <p>The eastern sub-counties — Embakasi Central, Embakasi West, Embakasi North, and Starehe — record the highest mean FSI scores, all above 4.0 on the 1–5 scale. Their flat terrain, high drainage density, and proximity to the Nairobi River and its tributaries drive elevated susceptibility.</p>
+    <div class="callout">
+      <p><strong>12 of 17 sub-counties</strong> have a majority FSI class of "High" (class 4). The remaining five — Dagoretti, Kibra, Kilimani, Langata, and Westlands — sit in the "Moderate" class, partly owing to higher elevations and better natural drainage toward the Ngong Hills.</p>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Sub-county</th><th>Mean FSI</th><th>Majority class</th><th>FSI level</th></tr></thead>
+      <tbody id="findings-tbody"></tbody>
+    </table>
+  </section>
+
+  <!-- Section 03: Sub-county comparison -->
+  <section class="story-section" id="s-compare">
+    <div class="section-label">Section 03</div>
+    <h2>Comparing FSI scores across all 17 sub-counties</h2>
+    <p>Embakasi Central (4.32) and Embakasi West (4.27) top the ranking, followed closely by Embakasi North and Starehe. The five westernmost sub-counties — which benefit from the higher, better-drained terrain near the Ngong escarpment — record the lowest mean scores, all below 3.5.</p>
+    <p>Even the "Moderate" sub-counties carry mean FSI values above 2.8, reflecting Nairobi's city-wide exposure to flooding risk. There are no "Very Low" or "Low" sub-counties in this analysis — a finding that underscores the importance of city-wide preparedness rather than concentrating only on the highest-risk areas.</p>
+    <div id="compare-bars" style="margin-top: 24px;"></div>
+  </section>
+
+  <!-- Section 04: Read the map -->
+  <section class="story-section" id="s-map">
+    <div class="section-label">Section 04</div>
+    <h2>How to read the dashboard map</h2>
+    <p>Switch to <strong>Part B</strong> to explore the interactive map. Each sub-county marker is coloured by its mean FSI score. Use the dropdown to zoom to a sub-county and see its detailed statistics in the right panel.</p>
+    <ul class="step-list">
+      <li><span class="step-num" style="background:#d9534f">●</span><div><strong>Dark red markers</strong> — mean FSI ≥ 4.0 (Very High susceptibility). Embakasi Central, Embakasi West, Embakasi North, Starehe.</div></li>
+      <li><span class="step-num" style="background:#e07a55">●</span><div><strong>Orange-red markers</strong> — mean FSI 3.7–4.0 (High susceptibility). Mathare, Kasarani, Makadara, Kamukunji, Embakasi East, Embakasi South, Ruaraka, Roysambu.</div></li>
+      <li><span class="step-num" style="background:#e0a255">●</span><div><strong>Amber markers</strong> — mean FSI 3.4–3.7 (Moderate-High). Kibra.</div></li>
+      <li><span class="step-num" style="background:#b8c455">●</span><div><strong>Yellow-green markers</strong> — mean FSI 2.8–3.4 (Moderate). Kilimani, Langata, Dagoretti, Westlands.</div></li>
+    </ul>
+    <div class="callout">
+      <p>When you load your sub-county GeoJSON into the <code>data/</code> folder, the choropleth polygon layer will replace the circle markers and give a full spatial picture of FSI gradients within each sub-county.</p>
+    </div>
+  </section>
+
+  <!-- Section 05: The 10 factors -->
+  <section class="story-section" id="s-factors">
+    <div class="section-label">Section 05</div>
+    <h2>The ten conditioning factors</h2>
+    <p>Each factor captures a different physical control on flood occurrence. Together they explain how water accumulates, where it drains, and which surfaces are most vulnerable to inundation.</p>
+    <ul class="step-list">
+      <li><span class="step-num">1</span><div><strong>Slope</strong> — steeper slopes shed water quickly; flat areas accumulate it. Derived from the DEM.</div></li>
+      <li><span class="step-num">2</span><div><strong>Elevation</strong> — lower elevations receive drainage from upslope and are more prone to ponding.</div></li>
+      <li><span class="step-num">3</span><div><strong>Topographic Wetness Index (TWI)</strong> — combines slope and contributing area to model where soil moisture concentrates.</div></li>
+      <li><span class="step-num">4</span><div><strong>Drainage Density</strong> — higher stream density means more surface channels for water to overflow during intense rainfall.</div></li>
+      <li><span class="step-num">5</span><div><strong>Distance to Rivers</strong> — proximity to mapped channels increases inundation risk during river overtopping events.</div></li>
+      <li><span class="step-num">6</span><div><strong>Distance to Roads</strong> — roads impede drainage; areas near busy roads often experience ponding from blocked culverts.</div></li>
+      <li><span class="step-num">7</span><div><strong>Curvature</strong> — concave surfaces (negative curvature) collect overland flow; convex surfaces disperse it.</div></li>
+      <li><span class="step-num">8</span><div><strong>NDVI</strong> — vegetation cover reduces runoff via infiltration and interception; low NDVI (bare or paved) accelerates runoff.</div></li>
+      <li><span class="step-num">9</span><div><strong>Soil Type</strong> — clay-rich soils have low infiltration capacity and generate more runoff than sandy or loamy soils.</div></li>
+      <li><span class="step-num">10</span><div><strong>Rainfall</strong> — mean annual rainfall sets the background moisture regime; higher rainfall amplifies all other factors.</div></li>
+    </ul>
+  </section>
+
+  <!-- Section 06: FR model -->
+  <section class="story-section" id="s-fr">
+    <div class="section-label">Section 06</div>
+    <h2>Frequency Ratio — how each class is scored</h2>
+    <p>The Frequency Ratio (FR) model compares the distribution of flood inventory points (documented flood locations) across each class of every conditioning factor with the distribution of that class in the total study area.</p>
+    <div class="callout">
+      <p><strong>FR = (% of flood pixels in class) ÷ (% of total area in class).</strong> An FR &gt; 1 means that class is over-represented in flood locations — it has a higher-than-expected association with flooding. FR = 1 is neutral. FR &lt; 1 means the class is under-represented — it is less likely to flood than average.</p>
+    </div>
+    <p>Each pixel in the study area receives an FR score for each factor. The ten FR scores are then combined using the AHP weights to produce the final FSI raster. The FSI raster is classified into five equal-interval classes (1–5) to produce the final susceptibility map.</p>
+    <table class="data-table">
+      <thead><tr><th>FR value</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>&gt; 2.0</td><td>Strong positive association with flooding</td></tr>
+        <tr><td>1.0 – 2.0</td><td>Moderate positive association</td></tr>
+        <tr><td>= 1.0</td><td>Neutral — same proportion as study area</td></tr>
+        <tr><td>0.5 – 1.0</td><td>Below-average association</td></tr>
+        <tr><td>&lt; 0.5</td><td>Strong negative association (unlikely to flood)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 07: AHP weights -->
+  <section class="story-section" id="s-ahp">
+    <div class="section-label">Section 07</div>
+    <h2>AHP weighting — ranking the factors by importance</h2>
+    <p>The Analytical Hierarchy Process (AHP) assigns a relative weight to each of the ten factors based on expert pairwise comparisons. Factors deemed more influential in determining flood susceptibility receive higher weights in the final FSI calculation.</p>
+    <p>Each pair of factors is compared on a 1–9 scale: 1 means equally important; 9 means one factor is extremely more important than the other. The pairwise comparison matrix is then normalized to derive the weight of each factor. A Consistency Ratio (CR) below 0.10 confirms the judgements are internally consistent.</p>
+    <div class="callout">
+      <p>In this analysis, <strong>Rainfall, TWI, and Distance to Rivers</strong> received the highest AHP weights — reflecting expert judgement that moisture regime, terrain-driven water accumulation, and channel proximity are the primary controls on flood susceptibility in Nairobi's context.</p>
+    </div>
+    <p>The final FSI for each pixel is the weighted sum: FSI = Σ(FR<sub>i</sub> × Weight<sub>i</sub>) across all 10 factors. The weights sum to 1.0.</p>
+  </section>
+
+  <!-- Section 08: Rainfall outlook -->
+  <section class="story-section" id="s-rains">
+    <div class="section-label">Section 08</div>
+    <h2>OND 2026 rainfall outlook</h2>
+    <p>Kenya Meteorological Department's October–December 2026 seasonal outlook projects above-average rainfall across Nairobi and the wider central highlands, with onset expected in the second or third week of October.</p>
+    <div class="callout">
+      <p>NOAA's Climate Prediction Center gives <strong>greater than 90% probability</strong> of a very strong El Niño event persisting through late 2026. El Niño years reliably enhance the short rains over East Africa. In 2019, an El Niño-enhanced short rains season displaced an estimated 25,000 people across Nairobi in a single rainy season.</p>
+    </div>
+    <p>The sub-counties flagged "High" in this FSI analysis — particularly the Embakasi cluster, Starehe, and Mathare — are precisely the ones documented as most impacted during past El Niño flood events. This convergence of modelled susceptibility and forecast conditions makes OND 2026 a high-priority preparedness window.</p>
+    <table class="data-table">
+      <thead><tr><th>Year</th><th>Season</th><th>Sub-counties most affected</th><th>Estimated displacement</th></tr></thead>
+      <tbody>
+        <tr><td>2024</td><td>Long rains (Apr)</td><td>Mathare, Embakasi East, Kibra</td><td>~12,000 people</td></tr>
+        <tr><td>2023</td><td>Short rains (Nov)</td><td>Starehe, Kamukunji, Makadara</td><td>~4,500 people</td></tr>
+        <tr><td>2020</td><td>Long rains (May)</td><td>Mathare, Embakasi North</td><td>~8,000 people</td></tr>
+        <tr><td>2019</td><td>Long rains (Apr–May)</td><td>Embakasi cluster, Mathare, Ruaraka</td><td>~25,000 people</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 09: Methodology -->
+  <section class="story-section" id="s-method">
+    <div class="section-label">Section 09</div>
+    <h2>Step-by-step methodology</h2>
+    <p>The analysis was carried out entirely in QGIS using open spatial datasets. Each step builds on the previous.</p>
+    <ul class="step-list">
+      <li><span class="step-num">1</span><div><strong>Factor preparation</strong> — each of the 10 conditioning rasters was resampled to a common resolution and clipped to the Nairobi county boundary. All layers were projected to UTM Zone 37S.</div></li>
+      <li><span class="step-num">2</span><div><strong>Classification</strong> — each factor raster was reclassified into five classes using natural breaks or expert-defined thresholds appropriate to its distribution in Nairobi.</div></li>
+      <li><span class="step-num">3</span><div><strong>FR calculation</strong> — flood inventory points were overlaid on each classified factor raster. The FR value was computed for each class and used to replace class values in the raster.</div></li>
+      <li><span class="step-num">4</span><div><strong>AHP weighting</strong> — a pairwise comparison matrix was built for all 10 factors. Weights were derived, and CR was checked (&lt; 0.10).</div></li>
+      <li><span class="step-num">5</span><div><strong>FSI raster</strong> — all 10 weighted FR rasters were summed using the raster calculator: FSI = Σ(FR<sub>i</sub> × w<sub>i</sub>). The output was classified 1–5.</div></li>
+      <li><span class="step-num">6</span><div><strong>Zonal statistics</strong> — the FSI raster was summarised per sub-county polygon to derive mean FSI, majority class, min, and max for this dashboard.</div></li>
+    </ul>
+  </section>
+
+  <!-- Section 10: Data sources -->
+  <section class="story-section" id="s-evidence">
+    <div class="section-label">Section 10</div>
+    <h2>Data sources</h2>
+    <p>All datasets are open-access. The analysis is fully reproducible in QGIS using these sources.</p>
+    <div class="chip-row">
+      <span class="source-chip">📡 Copernicus DEM GLO-30 — Slope, Elevation, Curvature, TWI</span>
+      <span class="source-chip">💧 HydroSHEDS — Drainage Density, Distance to Rivers</span>
+      <span class="source-chip">🌍 ESA WorldCover 10m — NDVI proxy, land cover</span>
+      <span class="source-chip">🗺 OpenStreetMap — Distance to Roads</span>
+      <span class="source-chip">🌧 CHIRPS / Kenya Met — Mean Annual Rainfall</span>
+      <span class="source-chip">🪨 FAO HWSD v2 — Soil Type</span>
+      <span class="source-chip">📌 KCAA / KNBS — Nairobi sub-county boundaries</span>
+      <span class="source-chip">☁️ Kenya Met OND 2026 Seasonal Outlook</span>
+    </div>
+    <p style="margin-top: 24px; font-size: 13px;">Analysis and mapping: <strong>Mohamed Mohamud Omar</strong> · <a href="https://mohamedabsiye.site" style="color:var(--accent)">mohamedabsiye.site</a></p>
+    <p style="font-size: 13px;">Tools: QGIS 3.x · Leaflet.js · Chart.js · Python (GeoPandas, Rasterio)</p>
+  </section>
+
+</div><!-- /part-a -->
+
+
+<!-- ====================================================== -->
+<!-- PART B: DASHBOARD                                       -->
+<!-- ====================================================== -->
+<div id="part-b">
+
+  <!-- Left: Filters -->
+  <div class="filter-panel">
+    <div class="filter-panel-header">
+      <span class="filter-panel-title">Filters</span>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+    </div>
+
+    <div class="filter-label">Sub-county</div>
+    <select class="filter-select" id="area-filter" onchange="applyAreaFilter()">
+      <option value="all">All sub-counties</option>
+    </select>
+
+    <div class="filter-label">Background map</div>
+    <select class="filter-select" id="basemap-filter" onchange="switchBasemap()">
+      <option value="dark">Dark (CartoDB)</option>
+      <option value="street">Simple street map</option>
+      <option value="satellite">Satellite imagery</option>
+    </select>
+    <p class="panel-note">The simple street map follows your light or dark theme.</p>
+
+    <div class="panel-divider">Map layers</div>
+    <ul class="layer-list">
+      <li class="layer-item"><input type="checkbox" id="lyr-boundaries" checked onchange="toggleLayer('boundaries')"><label for="lyr-boundaries">FSI choropleth (GeoJSON)</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-labels" checked onchange="toggleLayer('labels')"><label for="lyr-labels">Sub-county markers &amp; names</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-rivers" onchange="toggleLayer('rivers')"><label for="lyr-rivers">River network (GeoJSON)</label></li>
+    </ul>
+    <p class="panel-note">GeoJSON layers activate when <code>data/study_areas.geojson</code> is present. Selecting a sub-county zooms the map and filters the stats panel.</p>
+  </div>
+
+  <!-- Center: Map -->
+  <div id="map"></div>
+
+  <!-- Right: Stats -->
+  <div class="stats-panel">
+
+    <!-- Donut overview -->
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <span class="stats-section-title">FSI class distribution</span>
+        <span class="stats-badge" id="overview-badge">ALL SUB-COUNTIES</span>
+      </div>
+      <div class="donut-wrapper">
+        <canvas id="donut-chart" class="donut-canvas" width="96" height="96"></canvas>
+        <div style="flex:1">
+          <div class="legend-row">
+            <span class="legend-label"><span class="legend-dot" style="background:#e07a55"></span>High / Very High</span>
+            <span class="legend-val" id="s-flagged">12</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-label"><span class="legend-dot" style="background:#b8c455"></span>Moderate</span>
+            <span class="legend-val" id="s-other">5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Area comparison bars -->
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <span class="stats-section-title">Mean FSI by sub-county</span>
+        <span class="stats-badge">1–5 SCALE</span>
+      </div>
+      <div id="area-bars"></div>
+    </div>
+
+    <!-- Selected sub-county detail -->
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <span class="stats-section-title">Selected sub-county</span>
+        <span class="stats-badge" id="detail-badge">CHOOSE FROM FILTER</span>
+      </div>
+      <div id="ha-breakdown">
+        <p style="font-size:12px;color:var(--text2)">Select a sub-county above to see its FSI detail.</p>
+      </div>
+    </div>
+
+    <!-- FSI ranking table -->
+    <div class="stats-section">
+      <div class="stats-section-header">
+        <span class="stats-section-title">Full FSI ranking</span>
+        <span class="stats-badge">MEAN · MAJORITY</span>
+      </div>
+      <div id="building-breakdown"></div>
+    </div>
+
+  </div><!-- /stats-panel -->
+</div><!-- /part-b -->
+
+
+<script>
+// ============================================================
+// DATA — 17 Nairobi sub-counties, real FSI output from QGIS
+// fsi_mean: zonal mean from FSI raster (1–5 scale)
+// fsi_majority: modal FSI class per sub-county
+// center: [lat, lng] for map marker
+// ============================================================
+const DATA = {
+  areas: [
+    { name: "Dagoretti",        fsi_mean: 2.949, fsi_majority: 3, center: [-1.28106, 36.71216] },
+    { name: "Embakasi Central", fsi_mean: 4.317, fsi_majority: 4, center: [-1.26961, 36.90937] },
+    { name: "Embakasi East",    fsi_mean: 3.799, fsi_majority: 4, center: [-1.31057, 36.93772] },
+    { name: "Embakasi North",   fsi_mean: 4.032, fsi_majority: 4, center: [-1.24745, 36.89945] },
+    { name: "Embakasi South",   fsi_mean: 3.760, fsi_majority: 4, center: [-1.33573, 36.87389] },
+    { name: "Embakasi West",    fsi_mean: 4.271, fsi_majority: 4, center: [-1.27342, 36.88552] },
+    { name: "Kamukunji",        fsi_mean: 3.861, fsi_majority: 4, center: [-1.27542, 36.85831] },
+    { name: "Kasarani",         fsi_mean: 3.897, fsi_majority: 4, center: [-1.25200, 37.01356] },
+    { name: "Kibra",            fsi_mean: 3.409, fsi_majority: 3, center: [-1.30421, 36.77971] },
+    { name: "Kilimani",         fsi_mean: 3.256, fsi_majority: 3, center: [-1.27685, 36.77420] },
+    { name: "Langata",          fsi_mean: 3.108, fsi_majority: 3, center: [-1.36795, 36.81428] },
+    { name: "Makadara",         fsi_mean: 3.863, fsi_majority: 4, center: [-1.29457, 36.86338] },
+    { name: "Mathare",          fsi_mean: 3.978, fsi_majority: 4, center: [-1.25595, 36.87049] },
+    { name: "Roysambu",         fsi_mean: 3.717, fsi_majority: 4, center: [-1.20801, 36.87854] },
+    { name: "Ruaraka",          fsi_mean: 3.738, fsi_majority: 4, center: [-1.24575, 36.87808] },
+    { name: "Starehe",          fsi_mean: 4.010, fsi_majority: 4, center: [-1.28990, 36.82862] },
+    { name: "Westlands",        fsi_mean: 2.892, fsi_majority: 3, center: [-1.23206, 36.79538] },
+  ]
+};
+
+// Derived stats
+DATA.meanFSI     = (DATA.areas.reduce((s,a) => s + a.fsi_mean, 0) / DATA.areas.length).toFixed(2);
+DATA.highCount   = DATA.areas.filter(a => a.fsi_majority >= 4).length;
+DATA.modCount    = DATA.areas.filter(a => a.fsi_majority < 4).length;
+
+// ============================================================
+// FSI COLOUR + LEVEL HELPERS
+// ============================================================
+function fsiLevel(mean) {
+  if (mean >= 4.2) return "Very High";
+  if (mean >= 3.8) return "High";
+  if (mean >= 3.4) return "Moderate-High";
+  if (mean >= 2.8) return "Moderate";
+  return "Low-Moderate";
+}
+
+function fsiColor(mean) {
+  if (mean >= 4.2) return "#d9534f";
+  if (mean >= 3.8) return "#e07a55";
+  if (mean >= 3.4) return "#e0a255";
+  if (mean >= 2.8) return "#b8c455";
+  return "#6fbe7f";
+}
+
+// Keep aliases for any legacy calls
+function riskLevel(a) { return fsiLevel(a.fsi_mean); }
+function levelColor(a) { return fsiColor(a.fsi_mean); }
+
+// ============================================================
+// TAB SWITCHING
+// ============================================================
+let mapReady = false;
+
+function showTab(tab) {
+  const isA = tab === 'a';
+  document.getElementById('tab-a').classList.toggle('active', isA);
+  document.getElementById('tab-b').classList.toggle('active', !isA);
+  document.getElementById('part-a').style.display = isA ? 'block' : 'none';
+  const pb = document.getElementById('part-b');
+  pb.style.display = isA ? 'none' : 'grid';
+  if (!isA && !mapReady) { initDashboard(); mapReady = true; }
+  if (!isA && mapReady) { setTimeout(() => map.invalidateSize(), 50); }
+}
+
+// ============================================================
+// PART A — DYNAMIC CONTENT
+// ============================================================
+function buildAreaCards() {
+  const c = document.getElementById('area-cards');
+  [...DATA.areas].sort((a,b) => b.fsi_mean - a.fsi_mean).forEach(a => {
+    const color = fsiColor(a.fsi_mean);
+    const level = fsiLevel(a.fsi_mean);
+    const barPct = ((a.fsi_mean - 1) / 4 * 100).toFixed(0); // scale 1-5 → 0-100%
+    c.innerHTML += `
+      <div class="area-card">
+        <div class="area-card-name">${a.name}</div>
+        <div class="area-card-rivers">FSI majority class: ${a.fsi_majority}</div>
+        <div class="area-card-stat" style="color:${color}">${a.fsi_mean.toFixed(2)}</div>
+        <div class="area-card-meta">Mean FSI · ${level}</div>
+        <div class="concern-bar"><div class="concern-bar-fill" style="width:${barPct}%;background:${color}"></div></div>
+      </div>`;
+  });
+}
+
+function buildFindingsTable() {
+  const tbody = document.getElementById('findings-tbody');
+  [...DATA.areas].sort((a, b) => b.fsi_mean - a.fsi_mean).forEach(a => {
+    const color = fsiColor(a.fsi_mean);
+    const level = fsiLevel(a.fsi_mean);
+    const classLabel = { 1:"Very Low", 2:"Low", 3:"Moderate", 4:"High", 5:"Very High" };
+    tbody.innerHTML += `
+      <tr>
+        <td>${a.name}</td>
+        <td style="font-weight:600;color:${color};font-variant-numeric:tabular-nums">${a.fsi_mean.toFixed(3)}</td>
+        <td style="color:var(--text2)">${classLabel[a.fsi_majority] || a.fsi_majority}</td>
+        <td><span class="badge" style="background:${color}22;color:${color}">${level}</span></td>
+      </tr>`;
+  });
+}
+
+function buildCompareBars() {
+  const maxScore = Math.max(...DATA.areas.map(a => a.fsi_mean));
+  const c = document.getElementById('compare-bars');
+  [...DATA.areas].sort((a, b) => b.fsi_mean - a.fsi_mean).forEach(a => {
+    const color = fsiColor(a.fsi_mean);
+    c.innerHTML += `
+      <div class="compare-bar-row">
+        <div class="compare-bar-name">${a.name}</div>
+        <div class="compare-bar-track"><div class="compare-bar-fill" style="width:${(a.fsi_mean/maxScore*100).toFixed(0)}%;background:${color}"></div></div>
+        <div class="compare-bar-val" style="color:${color}">${a.fsi_mean.toFixed(2)}</div>
+      </div>`;
+  });
+}
+
+// Chapter nav scroll tracking
+function initChapterNav() {
+  document.querySelectorAll('.chapter-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const el = document.getElementById(link.dataset.target);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  const sections = document.querySelectorAll('.story-section');
+  const links = document.querySelectorAll('.chapter-link');
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.toggle('active', l.dataset.target === e.target.id));
+      }
+    });
+  }, { rootMargin: '-100px 0px -55% 0px', threshold: 0 });
+
+  sections.forEach(s => obs.observe(s));
+}
+
+// ============================================================
+// PART B — MAP + CHARTS
+// ============================================================
+let map, donutChart;
+const layers = {};
+
+const TILE_URLS = {
+  dark:      'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+  street:    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+};
+const tileAttrs = {
+  dark: '© <a href="https://carto.com">CartoDB</a> © <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+  street: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  satellite: '© <a href="https://www.esri.com">Esri</a>',
+};
+let activeTileLayer;
+
+function initDashboard() {
+  // Map centred on Nairobi
+  map = L.map('map', { center: [-1.286, 36.870], zoom: 11 });
+  activeTileLayer = L.tileLayer(TILE_URLS.dark, { attribution: tileAttrs.dark, maxZoom: 19 }).addTo(map);
+
+  // Build sub-county dropdown
+  const sel = document.getElementById('area-filter');
+  [...DATA.areas].sort((a,b) => a.name.localeCompare(b.name)).forEach(a => {
+    const opt = document.createElement('option');
+    opt.value = a.name; opt.textContent = a.name;
+    sel.appendChild(opt);
+  });
+
+  // Marker layers
+  layers.labels     = L.layerGroup().addTo(map);
+  layers.boundaries = L.layerGroup().addTo(map);
+
+  DATA.areas.forEach(a => {
+    const color = fsiColor(a.fsi_mean);
+    const level = fsiLevel(a.fsi_mean);
+    const classLabel = { 1:"Very Low", 2:"Low", 3:"Moderate", 4:"High", 5:"Very High" };
+
+    // Circle marker sized by FSI (larger = higher risk)
+    const radius = 10 + (a.fsi_mean - 2.8) * 4;
+    L.circleMarker(a.center, {
+      radius: Math.max(10, radius),
+      fillColor: color, color: '#fff', weight: 2, fillOpacity: 0.88,
+    }).bindPopup(`
+      <div style="font-family:Inter,system-ui;min-width:180px;padding:4px 0">
+        <strong style="font-size:14px">${a.name}</strong><br>
+        <span style="color:${color};font-weight:600">${level}</span><br><br>
+        Mean FSI: <strong style="color:${color}">${a.fsi_mean.toFixed(3)}</strong><br>
+        Majority class: <strong>${classLabel[a.fsi_majority]}</strong> (class ${a.fsi_majority})
+      </div>
+    `).addTo(layers.boundaries);
+
+    // Name label
+    const labelIcon = L.divIcon({
+      className: '',
+      html: `<div style="background:rgba(0,0,0,0.75);color:#fff;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;white-space:nowrap;margin-top:24px;font-family:Inter,system-ui">${a.name}</div>`,
+      iconAnchor: [0, 0],
+    });
+    L.marker(a.center, { icon: labelIcon }).addTo(layers.labels);
+  });
+
+  // FSI colour legend
+  const legend = L.control({ position: 'bottomleft' });
+  legend.onAdd = () => {
+    const div = L.DomUtil.create('div');
+    div.style.cssText = 'background:rgba(15,17,23,0.9);padding:10px 14px;border-radius:8px;font-family:Inter,system-ui;font-size:11px;color:#e8eaf0;border:1px solid #2d3154;line-height:1.8';
+    div.innerHTML = `<strong style="display:block;margin-bottom:4px;font-size:12px">Mean FSI</strong>
+      <span style="color:#d9534f">●</span> ≥ 4.2 Very High<br>
+      <span style="color:#e07a55">●</span> 3.8–4.2 High<br>
+      <span style="color:#e0a255">●</span> 3.4–3.8 Moderate-High<br>
+      <span style="color:#b8c455">●</span> &lt; 3.4 Moderate`;
+    return div;
+  };
+  legend.addTo(map);
+
+  // ──────────────────────────────────────────────────────────
+  // GEOJSON — uncomment when your files are in data/
+  // Field names: adm2_name (join key), fsi_mean, fsi_majority
+  // ──────────────────────────────────────────────────────────
+
+  // Sub-county choropleth from study_areas.geojson
+  // FSI values are injected client-side by matching adm2_name — no preprocessing needed.
+  fetch('data/study_areas.geojson')
+    .then(r => r.json())
+    .then(gj => {
+      // Build lookup from DATA object
+      const fsiLookup = {};
+      DATA.areas.forEach(a => { fsiLookup[a.name.toLowerCase()] = a; });
+
+      // Inject fsi_mean and fsi_majority into each GeoJSON feature
+      gj.features.forEach(f => {
+        const key = (f.properties.adm2_name || '').toLowerCase();
+        const match = fsiLookup[key];
+        if (match) {
+          f.properties.fsi_mean      = match.fsi_mean;
+          f.properties.fsi_majority  = match.fsi_majority;
+        }
+      });
+
+      // Remove the circle-marker fallback layer
+      if (layers.boundaries) map.removeLayer(layers.boundaries);
+
+      layers.boundaries = L.geoJSON(gj, {
+        style: f => ({
+          fillColor:   fsiColor(f.properties.fsi_mean || 3),
+          fillOpacity: 0.60,
+          weight:      1.5,
+          color:       '#ffffff',
+          opacity:     0.35,
+        }),
+        onEachFeature: (f, layer) => {
+          const p = f.properties;
+          const lvl = p.fsi_mean ? fsiLevel(p.fsi_mean) : 'N/A';
+          layer.bindTooltip(
+            `<strong>${p.adm2_name}</strong><br>
+             Mean FSI: <b>${p.fsi_mean ? parseFloat(p.fsi_mean).toFixed(3) : '—'}</b><br>
+             Risk level: <b>${lvl}</b>`,
+            { sticky: true }
+          );
+          layer.on('mouseover', function() { this.setStyle({ fillOpacity: 0.85, weight: 2.5 }); });
+          layer.on('mouseout',  function() { layers.boundaries.resetStyle(this); });
+          layer.on('click', () => {
+            const val = p.adm2_name;
+            const sel = document.getElementById('area-filter');
+            if (sel) { sel.value = val; applyAreaFilter(); }
+          });
+        }
+      }).addTo(map);
+    })
+    .catch(() => {
+      // GeoJSON not found — circle markers remain as fallback, no error shown
+    });
+
+  // River network
+  // fetch('data/rivers.geojson').then(r => r.json()).then(gj => {
+  //   layers.rivers = L.geoJSON(gj, {
+  //     style: { color: '#4da6e0', weight: 1.2, opacity: 0.7 }
+  //   });  // not added by default — user toggles via checkbox
+  // });
+
+  // ──────────────────────────────────────────────────────────
+
+  // Charts
+  initDonut();
+  buildStatsBars();
+  buildHaBreakdown();
+  buildBuildingBreakdown();
+}
+
+function switchBasemap() {
+  const val = document.getElementById('basemap-filter').value;
+  if (activeTileLayer) map.removeLayer(activeTileLayer);
+  activeTileLayer = L.tileLayer(TILE_URLS[val], { attribution: tileAttrs[val], maxZoom: 19 }).addTo(map);
+}
+
+function toggleLayer(name) {
+  const cb = document.getElementById('lyr-' + name);
+  if (!layers[name]) return;
+  if (cb && cb.checked) layers[name].addTo(map);
+  else map.removeLayer(layers[name]);
+}
+
+function applyAreaFilter() {
+  const val = document.getElementById('area-filter').value;
+  updateStats(val);
+  if (val === 'all') {
+    map.flyTo([-1.286, 36.870], 11, { duration: 0.8 });
+  } else {
+    const a = DATA.areas.find(x => x.name === val);
+    if (a) map.flyTo(a.center, 14, { duration: 0.8 });
+  }
+  document.getElementById('overview-badge').textContent = val === 'all' ? 'ALL SUB-COUNTIES' : val.toUpperCase();
+}
+
+function resetFilters() {
+  document.getElementById('area-filter').value = 'all';
+  applyAreaFilter();
+}
+
+// Donut chart (shows High/above vs Moderate sub-county count)
+let donutHighCount = DATA.highCount;
+let donutModCount  = DATA.modCount;
+
+function initDonut() {
+  const ctx = document.getElementById('donut-chart').getContext('2d');
+  donutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [donutHighCount, donutModCount],
+        backgroundColor: ['#e07a55', '#b8c455'],
+        borderWidth: 0,
+        hoverOffset: 4,
+      }]
+    },
+    options: {
+      cutout: '72%',
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ctx.raw + ' sub-counties' } },
+      },
+    },
+    plugins: [{
+      id: 'center',
+      beforeDraw(chart) {
+        const { ctx, chartArea: { left, right, top, bottom } } = chart;
+        const cx = (left + right) / 2, cy = (top + bottom) / 2;
+        ctx.save();
+        ctx.font = 'bold 15px Inter, system-ui';
+        ctx.fillStyle = '#e8eaf0';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(donutHighCount + ' / 17', cx, cy - 4);
+        ctx.font = '9px Inter, system-ui';
+        ctx.fillStyle = '#9aa0b4';
+        ctx.fillText('High+', cx, cy + 11);
+        ctx.restore();
+      }
+    }]
+  });
+}
+
+function updateStats(areaName) {
+  if (areaName === 'all') {
+    donutHighCount = DATA.highCount;
+    donutModCount  = DATA.modCount;
+    document.getElementById('s-flagged').textContent = DATA.highCount;
+    document.getElementById('s-other').textContent   = DATA.modCount;
+    document.getElementById('ha-breakdown').innerHTML = '<p style="font-size:12px;color:var(--text2)">Select a sub-county above to see its FSI detail.</p>';
+    document.getElementById('detail-badge').textContent = 'CHOOSE FROM FILTER';
+  } else {
+    const a = DATA.areas.find(x => x.name === areaName);
+    if (!a) return;
+    const color = fsiColor(a.fsi_mean);
+    const level = fsiLevel(a.fsi_mean);
+    donutHighCount = 1; donutModCount = 0;  // single area selected
+    document.getElementById('s-flagged').textContent = a.fsi_mean.toFixed(3);
+    document.getElementById('s-other').textContent   = a.fsi_majority;
+    document.getElementById('detail-badge').textContent = areaName.toUpperCase();
+    document.getElementById('ha-breakdown').innerHTML = `
+      <div class="breakdown-row"><span class="breakdown-name">Mean FSI</span><span class="breakdown-val" style="color:${color}">${a.fsi_mean.toFixed(3)}</span></div>
+      <div class="breakdown-row"><span class="breakdown-name">Majority class</span><span class="breakdown-val">Class ${a.fsi_majority}</span></div>
+      <div class="breakdown-row"><span class="breakdown-name">FSI level</span><span class="breakdown-val" style="color:${color}">${level}</span></div>
+    `;
+  }
+  donutChart.data.datasets[0].data = [donutHighCount, donutModCount];
+  donutChart.update();
+}
+
+function buildStatsBars() {
+  const max = Math.max(...DATA.areas.map(a => a.fsi_mean));
+  const c = document.getElementById('area-bars');
+  [...DATA.areas].sort((a, b) => b.fsi_mean - a.fsi_mean).forEach(a => {
+    const color = fsiColor(a.fsi_mean);
+    c.innerHTML += `
+      <div class="area-bar-row">
+        <div class="area-bar-name">${a.name}</div>
+        <div class="area-bar-track"><div class="area-bar-fill" style="width:${(a.fsi_mean/max*100).toFixed(0)}%;background:${color}"></div></div>
+        <div class="area-bar-val" style="color:${color}">${a.fsi_mean.toFixed(2)}</div>
+      </div>`;
+  });
+}
+
+function buildHaBreakdown() {
+  // Placeholder — shows overview message on load; updated by updateStats() on filter change
+  document.getElementById('ha-breakdown').innerHTML =
+    '<p style="font-size:12px;color:var(--text2)">Select a sub-county above to see its FSI detail.</p>';
+}
+
+function buildBuildingBreakdown() {
+  const c = document.getElementById('building-breakdown');
+  const classLabel = { 1:"Very Low", 2:"Low", 3:"Moderate", 4:"High", 5:"Very High" };
+  [...DATA.areas].sort((a,b) => b.fsi_mean - a.fsi_mean).forEach(a => {
+    const color = fsiColor(a.fsi_mean);
+    c.innerHTML += `
+      <div class="breakdown-row">
+        <span class="breakdown-name">${a.name}</span>
+        <span class="breakdown-val"><span style="color:${color}">${a.fsi_mean.toFixed(2)}</span> · ${classLabel[a.fsi_majority]}</span>
+      </div>`;
+  });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('h-total').textContent   = DATA.areas.length;
+  document.getElementById('h-flagged').textContent = DATA.highCount;
+  document.getElementById('h-pct').textContent     = DATA.meanFSI;
+  buildAreaCards();
+  buildFindingsTable();
+  buildCompareBars();
+  initChapterNav();
+});
+</script>
