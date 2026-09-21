@@ -736,13 +736,13 @@ let map, donutChart;
 const layers = {};
 
 const TILE_URLS = {
-  dark:      'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-  street:    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  dark:      'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  street:    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
   satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
 };
 const tileAttrs = {
-  dark: '© <a href="https://carto.com">CartoDB</a> © <a href="https://www.openstreetmap.org/copyright">OSM</a>',
-  street: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  dark: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+  street: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
   satellite: '© <a href="https://www.esri.com">Esri</a>',
 };
 let activeTileLayer;
