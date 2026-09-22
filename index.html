@@ -516,11 +516,13 @@ body {
 
     <div class="panel-divider">Map layers</div>
     <ul class="layer-list">
-      <li class="layer-item"><input type="checkbox" id="lyr-boundaries" checked onchange="toggleLayer('boundaries')"><label for="lyr-boundaries">FSI choropleth (GeoJSON)</label></li>
-      <li class="layer-item"><input type="checkbox" id="lyr-labels" checked onchange="toggleLayer('labels')"><label for="lyr-labels">Sub-county markers &amp; names</label></li>
-      <li class="layer-item"><input type="checkbox" id="lyr-rivers" onchange="toggleLayer('rivers')"><label for="lyr-rivers">River network (GeoJSON)</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-boundaries" checked onchange="toggleLayer('boundaries')"><label for="lyr-boundaries">FSI choropleth</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-labels" checked onchange="toggleLayer('labels')"><label for="lyr-labels">Sub-county labels</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-rivers" checked onchange="toggleLayer('rivers')"><label for="lyr-rivers">River network</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-buffer" checked onchange="toggleLayer('buffer')"><label for="lyr-buffer">100m river buffer</label></li>
+      <li class="layer-item"><input type="checkbox" id="lyr-buildings" checked onchange="toggleLayer('buildings')"><label for="lyr-buildings">Buildings (Very High FSI)</label></li>
     </ul>
-    <p class="panel-note">GeoJSON layers activate when <code>data/study_areas.geojson</code> is present. Selecting a sub-county zooms the map and filters the stats panel.</p>
+    <p class="panel-note">Select a sub-county to zoom and filter stats.</p>
   </div>
 
   <!-- Center: Map -->
@@ -736,12 +738,12 @@ let map, donutChart;
 const layers = {};
 
 const TILE_URLS = {
-  dark:      'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  dark:      'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
   street:    'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
   satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
 };
 const tileAttrs = {
-  dark: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+  dark: '© <a href="https://www.esri.com">Esri</a>, HERE, Garmin, © OpenStreetMap contributors',
   street: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
   satellite: '© <a href="https://www.esri.com">Esri</a>',
 };
@@ -801,7 +803,10 @@ function initDashboard() {
       <span style="color:#d9534f">●</span> ≥ 4.2 Very High<br>
       <span style="color:#e07a55">●</span> 3.8–4.2 High<br>
       <span style="color:#e0a255">●</span> 3.4–3.8 Moderate-High<br>
-      <span style="color:#b8c455">●</span> &lt; 3.4 Moderate`;
+      <span style="color:#b8c455">●</span> &lt; 3.4 Moderate<br>
+      <div style="border-top:1px solid #2d3154;margin:6px 0 4px"></div>
+      <span style="color:#4da6e0">—</span> Rivers &amp; 100m buffer<br>
+      <span style="color:#e05555">■</span> Buildings (Very High FSI)`;
     return div;
   };
   legend.addTo(map);
@@ -865,11 +870,31 @@ function initDashboard() {
     });
 
   // River network
-  // fetch('data/rivers.geojson').then(r => r.json()).then(gj => {
-  //   layers.rivers = L.geoJSON(gj, {
-  //     style: { color: '#4da6e0', weight: 1.2, opacity: 0.7 }
-  //   });  // not added by default — user toggles via checkbox
-  // });
+  fetch('data/Rivers.geojson')
+    .then(r => r.json())
+    .then(gj => {
+      layers.rivers = L.geoJSON(gj, {
+        style: { color: '#4da6e0', weight: 1.4, opacity: 0.8 }
+      }).addTo(map);
+    }).catch(() => {});
+
+  // 100m river buffer
+  fetch('data/river_buffer.geojson')
+    .then(r => r.json())
+    .then(gj => {
+      layers.buffer = L.geoJSON(gj, {
+        style: { color: '#4da6e0', weight: 0.5, opacity: 0.4, fillColor: '#4da6e0', fillOpacity: 0.15 }
+      }).addTo(map);
+    }).catch(() => {});
+
+  // Buildings in Very High FSI zones
+  fetch('data/buildings_highrisk.geojson')
+    .then(r => r.json())
+    .then(gj => {
+      layers.buildings = L.geoJSON(gj, {
+        style: { color: '#e05555', weight: 0.5, opacity: 0.7, fillColor: '#e05555', fillOpacity: 0.5 }
+      }).addTo(map);
+    }).catch(() => {});
 
   // ──────────────────────────────────────────────────────────
 
