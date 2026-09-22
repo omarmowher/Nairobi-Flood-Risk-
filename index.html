@@ -295,8 +295,20 @@ body {
   <div class="tab-group">
     <button class="tab-btn active" onclick="showTab('a')" id="tab-a">Part A · The Analysis</button>
     <button class="tab-btn" onclick="showTab('b')" id="tab-b">Part B · Dashboard</button>
+    <button class="tab-btn" onclick="window.print()" title="Export / Print" style="margin-left:8px">⎙ Export PDF</button>
   </div>
 </nav>
+
+<style>
+@media print {
+  .top-nav, .chapter-nav { display: none !important; }
+  #part-a { padding-top: 0 !important; }
+  #part-b.visible { display: block !important; height: 100vh !important; grid-template-columns: 1fr !important; }
+  .filter-panel, .stats-panel { display: none !important; }
+  #map { position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 0; }
+  body { background: white !important; }
+}
+</style>
 
 <!-- ====================================================== -->
 <!-- PART A: THE STORY                                       -->
@@ -408,6 +420,12 @@ body {
       <p><strong>FR = (% of flood pixels in class) ÷ (% of total area in class).</strong> An FR &gt; 1 means that class is over-represented in flood locations — it has a higher-than-expected association with flooding. FR = 1 is neutral. FR &lt; 1 means the class is under-represented — it is less likely to flood than average.</p>
     </div>
     <p>Each pixel in the study area receives an FR score for each factor. The ten FR scores are then combined using the AHP weights to produce the final FSI raster. The FSI raster is classified into five equal-interval classes (1–5) to produce the final susceptibility map.</p>
+    <figure style="margin:24px 0 0">
+      <img src="data/roc_fr.png" alt="ROC curve — Frequency Ratio model"
+           style="max-width:100%;border-radius:8px;border:1px solid var(--border)"
+           onerror="this.closest('figure').style.display='none'">
+      <figcaption style="font-size:11px;color:var(--text2);margin-top:6px">ROC curve for the Frequency Ratio model — AUC reflects model performance against flood inventory points.</figcaption>
+    </figure>
     <table class="data-table">
       <thead><tr><th>FR value</th><th>Interpretation</th></tr></thead>
       <tbody>
@@ -430,6 +448,12 @@ body {
       <p>In this analysis, <strong>Rainfall, TWI, and Distance to Rivers</strong> received the highest AHP weights — reflecting expert judgement that moisture regime, terrain-driven water accumulation, and channel proximity are the primary controls on flood susceptibility in Nairobi's context.</p>
     </div>
     <p>The final FSI for each pixel is the weighted sum: FSI = Σ(FR<sub>i</sub> × Weight<sub>i</sub>) across all 10 factors. The weights sum to 1.0.</p>
+    <figure style="margin:24px 0 0">
+      <img src="data/roc_ahp.png" alt="ROC curve — AHP-weighted FSI model"
+           style="max-width:100%;border-radius:8px;border:1px solid var(--border)"
+           onerror="this.closest('figure').style.display='none'">
+      <figcaption style="font-size:11px;color:var(--text2);margin-top:6px">ROC curve for the AHP-weighted FSI model — AUC measures overall susceptibility mapping accuracy.</figcaption>
+    </figure>
   </section>
 
   <!-- Section 08: Rainfall outlook -->
@@ -465,6 +489,23 @@ body {
       <li><span class="step-num">5</span><div><strong>FSI raster</strong> — all 10 weighted FR rasters were summed using the raster calculator: FSI = Σ(FR<sub>i</sub> × w<sub>i</sub>). The output was classified 1–5.</div></li>
       <li><span class="step-num">6</span><div><strong>Zonal statistics</strong> — the FSI raster was summarised per sub-county polygon to derive mean FSI, majority class, min, and max for this dashboard.</div></li>
     </ul>
+    <div id="factor-maps" style="margin-top:32px">
+      <p class="section-label" style="margin-bottom:14px">Conditioning factor maps (QGIS output)</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+        <figure style="margin:0"><img src="data/maps/slope.png" alt="Slope" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Slope</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/elevation.png" alt="Elevation" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Elevation</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/twi.png" alt="TWI" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Topographic Wetness Index (TWI)</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/drainage_density.png" alt="Drainage Density" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Drainage Density</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/dist_rivers.png" alt="Distance to Rivers" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Distance to Rivers</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/dist_roads.png" alt="Distance to Roads" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Distance to Roads</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/curvature.png" alt="Curvature" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Curvature</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/ndvi.png" alt="NDVI" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">NDVI</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/soil.png" alt="Soil Type" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Soil Type</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/rainfall.png" alt="Rainfall" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Mean Annual Rainfall</figcaption></figure>
+        <figure style="margin:0"><img src="data/maps/fsi_final.png" alt="Final FSI Map" style="width:100%;border-radius:6px;border:1px solid var(--border)" onerror="this.closest('figure').style.display='none'"><figcaption style="font-size:11px;color:var(--text2);margin-top:4px;text-align:center">Final FSI Map</figcaption></figure>
+      </div>
+      <p style="font-size:11px;color:var(--text2);margin-top:10px">Maps load automatically if exported as PNG into <code>data/maps/</code> with the filenames above.</p>
+    </div>
   </section>
 
   <!-- Section 10: Data sources -->
@@ -541,11 +582,11 @@ body {
         <canvas id="donut-chart" class="donut-canvas" width="96" height="96"></canvas>
         <div style="flex:1">
           <div class="legend-row">
-            <span class="legend-label"><span class="legend-dot" style="background:#e07a55"></span>High / Very High</span>
+            <span class="legend-label"><span class="legend-dot" id="dot-high" style="background:#e07a55"></span><span id="legend-label-high">High / Very High</span></span>
             <span class="legend-val" id="s-flagged">12</span>
           </div>
           <div class="legend-row">
-            <span class="legend-label"><span class="legend-dot" style="background:#b8c455"></span>Moderate</span>
+            <span class="legend-label"><span class="legend-dot" id="dot-mod" style="background:#b8c455"></span><span id="legend-label-mod">Moderate</span></span>
             <span class="legend-val" id="s-other">5</span>
           </div>
         </div>
@@ -935,9 +976,11 @@ function resetFilters() {
   applyAreaFilter();
 }
 
-// Donut chart (shows High/above vs Moderate sub-county count)
-let donutHighCount = DATA.highCount;
-let donutModCount  = DATA.modCount;
+// Donut chart
+let donutHighCount  = DATA.highCount;
+let donutModCount   = DATA.modCount;
+let donutCenterText = DATA.highCount + ' / 17';
+let donutSubText    = 'High+';
 
 function initDonut() {
   const ctx = document.getElementById('donut-chart').getContext('2d');
@@ -955,7 +998,7 @@ function initDonut() {
       cutout: '72%',
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ctx.raw + ' sub-counties' } },
+        tooltip: { callbacks: { label: ctx => ctx.raw + (donutSubText === 'High+' ? ' sub-counties' : '') } },
       },
     },
     plugins: [{
@@ -967,10 +1010,10 @@ function initDonut() {
         ctx.font = 'bold 15px Inter, system-ui';
         ctx.fillStyle = '#e8eaf0';
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-        ctx.fillText(donutHighCount + ' / 17', cx, cy - 4);
+        ctx.fillText(donutCenterText, cx, cy - 4);
         ctx.font = '9px Inter, system-ui';
         ctx.fillStyle = '#9aa0b4';
-        ctx.fillText('High+', cx, cy + 11);
+        ctx.fillText(donutSubText, cx, cy + 11);
         ctx.restore();
       }
     }]
@@ -979,10 +1022,17 @@ function initDonut() {
 
 function updateStats(areaName) {
   if (areaName === 'all') {
-    donutHighCount = DATA.highCount;
-    donutModCount  = DATA.modCount;
+    donutHighCount  = DATA.highCount;
+    donutModCount   = DATA.modCount;
+    donutCenterText = DATA.highCount + ' / 17';
+    donutSubText    = 'High+';
+    document.getElementById('dot-high').style.background = '#e07a55';
+    document.getElementById('dot-mod').style.background  = '#b8c455';
+    document.getElementById('legend-label-high').textContent = 'High / Very High';
+    document.getElementById('legend-label-mod').textContent  = 'Moderate';
     document.getElementById('s-flagged').textContent = DATA.highCount;
     document.getElementById('s-other').textContent   = DATA.modCount;
+    donutChart.data.datasets[0].backgroundColor = ['#e07a55', '#b8c455'];
     document.getElementById('ha-breakdown').innerHTML = '<p style="font-size:12px;color:var(--text2)">Select a sub-county above to see its FSI detail.</p>';
     document.getElementById('detail-badge').textContent = 'CHOOSE FROM FILTER';
   } else {
@@ -990,9 +1040,19 @@ function updateStats(areaName) {
     if (!a) return;
     const color = fsiColor(a.fsi_mean);
     const level = fsiLevel(a.fsi_mean);
-    donutHighCount = 1; donutModCount = 0;  // single area selected
+    // Donut shows FSI score as proportion of 5 (max scale)
+    const filled = Math.round((a.fsi_mean / 5) * 100);
+    donutHighCount  = filled;
+    donutModCount   = 100 - filled;
+    donutCenterText = a.fsi_mean.toFixed(2);
+    donutSubText    = '/ 5.0';
+    document.getElementById('dot-high').style.background = color;
+    document.getElementById('dot-mod').style.background  = '#2d3154';
+    document.getElementById('legend-label-high').textContent = 'Mean FSI';
+    document.getElementById('legend-label-mod').textContent  = level;
     document.getElementById('s-flagged').textContent = a.fsi_mean.toFixed(3);
-    document.getElementById('s-other').textContent   = a.fsi_majority;
+    document.getElementById('s-other').textContent   = 'Class ' + a.fsi_majority;
+    donutChart.data.datasets[0].backgroundColor = [color, '#2d3154'];
     document.getElementById('detail-badge').textContent = areaName.toUpperCase();
     document.getElementById('ha-breakdown').innerHTML = `
       <div class="breakdown-row"><span class="breakdown-name">Mean FSI</span><span class="breakdown-val" style="color:${color}">${a.fsi_mean.toFixed(3)}</span></div>
